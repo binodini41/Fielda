@@ -1,0 +1,34 @@
+2020-06-17 15:01:49,939 - InHouseFielda -INFO -************Launching Browser**********
+2020-06-17 15:02:05,592 - InHouseFielda -INFO -************Launching url**********
+2020-06-17 15:02:07,595 - InHouseFielda -INFO -************Entering userName and Password**********
+2020-06-17 15:02:09,887 - InHouseFielda -INFO -************Click on login button**********
+2020-06-17 15:02:14,954 - InHouseFielda -INFO -************Login pass**********
+2020-06-17 15:02:16,982 - InHouseFielda -INFO -************Closing Browser**********
+2020-06-17 15:02:23,485 - InHouseFielda -INFO -************Launching Browser**********
+2020-06-17 15:02:40,429 - InHouseFielda -INFO -************Launching url**********
+2020-06-17 15:02:42,430 - InHouseFielda -INFO -************Entering userName and Password**********
+2020-06-17 15:02:44,721 - InHouseFielda -INFO -************Click on login button**********
+2020-06-17 15:02:49,859 - InHouseFielda -INFO -************Login pass**********
+2020-06-17 15:02:51,902 - InHouseFielda -INFO -************Closing Browser**********
+2020-06-17 15:02:58,826 - InHouseFielda -INFO -************Launching Browser**********
+2020-06-17 15:03:15,283 - InHouseFielda -INFO -************Launching url**********
+2020-06-17 15:03:17,285 - InHouseFielda -INFO -************Entering userName and Password**********
+2020-06-17 15:03:19,559 - InHouseFielda -INFO -************Click on login button**********
+2020-06-17 15:03:26,935 - InHouseFielda -INFO -************Login fail**********
+2020-06-17 15:03:43,578 - InHouseFielda -INFO -************Launching Browser**********
+2020-06-17 15:03:58,828 - InHouseFielda -INFO -************Launching url**********
+2020-06-17 15:04:00,830 - InHouseFielda -INFO -************Entering userName and Password**********
+2020-06-17 15:04:03,108 - InHouseFielda -INFO -************Click on login button**********
+2020-06-17 15:04:08,202 - InHouseFielda -INFO -************Login pass**********
+2020-06-17 15:04:10,214 - InHouseFielda -INFO -************Closing Browser**********
+2020-06-17 15:04:17,196 - InHouseFielda -INFO -************Launching Browser**********
+2020-06-17 15:04:32,004 - InHouseFielda -INFO -************Launching url**********
+2020-06-17 15:04:34,006 - InHouseFielda -INFO -************Entering userName and Password**********
+2020-06-17 15:04:36,286 - InHouseFielda -INFO -************Click on login button**********
+2020-06-17 15:04:41,364 - InHouseFielda -INFO -************Login pass**********
+2020-06-17 15:04:43,374 - InHouseFielda -INFO -************Closing Browser**********
+2020-06-17 15:04:50,717 - InHouseFielda -INFO -************Launching Browser**********
+2020-06-17 15:05:07,756 - InHouseFielda -INFO -************Launching url**********
+2020-06-17 15:05:09,757 - InHouseFielda -INFO -************Entering userName and Password**********
+2020-06-17 15:05:12,023 - InHouseFielda -INFO -************Click on login button**********
+2020-06-17 15:05:19,414 - InHouseFielda -INFO -************Login fail**********
