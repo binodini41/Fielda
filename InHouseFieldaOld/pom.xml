@@ -3,8 +3,7 @@
   <groupId>InHouseFielda</groupId>
   <artifactId>InHouseFielda</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
-   <properties>
+  <properties>
     </properties>
       <build>
     <plugins>
@@ -26,9 +25,32 @@
           <systemPropertyVariables>
             <propertyName>chrome</propertyName>
           </systemPropertyVariables>
+          <testFailureIgnore>true</testFailureIgnore>
         </configuration>
       </plugin>
+      <plugin>
+    <groupId>net.masterthought</groupId>
+    <artifactId>maven-cucumber-reporting</artifactId>
+    <version>3.16.0</version>
+      <executions>
+      <execution>
+      <id>execution</id>
+      <phase>verify</phase>
+      <goals>
+      <goal>
+      generate
+      </goal>
+      </goals>
+      <configuration>
+      <projectName>Execute Fields InHouse</projectName>
+      <outputDirectory>$ {project.build.directory}/cucumber-reports-html</outputDirectory>
+      <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+      <checkBuildResult>true</checkBuildResult>
+      </configuration>
+      </execution>
+      </executions>
       
+      </plugin>
        </plugins>
    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
   

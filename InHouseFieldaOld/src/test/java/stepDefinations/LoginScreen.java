@@ -7,16 +7,23 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.junit.After;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+
+import cucumber.api.Scenario;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -28,7 +35,7 @@ import pageObjects.LoginPage;
 public class LoginScreen extends BaseClass  {
 
 	@Before
-	public void Setup() throws IOException{
+	public void Setup(Scenario scenario) throws IOException{
 		configprop=new Properties();
 		FileInputStream configPropfile= new FileInputStream("config.properties");
 		configprop.load(configPropfile);
@@ -37,24 +44,33 @@ public class LoginScreen extends BaseClass  {
 		PropertyConfigurator.configure("log4j.properties");
 		
 		String br=configprop.getProperty("browser");
-		if(br.equals("chrome")){
 		
+		if(br.equals("chrome"))
+		{
 		System.setProperty("webdriver.chrome.driver",configprop.getProperty("chromepath"));
 		driver= new ChromeDriver();
-		}
-		else if(br.equals("firefox")){
+		scenario.write("Chrome Browser launched");
+			}
+		else if(br.equals("firefox"))
+		{
 			System.setProperty("webdriver.gecko.driver",configprop.getProperty("firefoxpath"));
 			driver= new FirefoxDriver();
-			
-		}else if(br.equals("ie")){
+			scenario.write("Firefox Browser launched");
+		}
+		else if(br.equals("ie"))
+		{
 			System.setProperty("webdriver.ie.driver",configprop.getProperty("iepath"));
 			driver= new InternetExplorerDriver();
-			
+			scenario.write("ie Browser launched");
 		}
+		
 		driver.manage().window().maximize();
 		logger.info("************Launching Browser**********");
 		
 	}
+	
+	
+	
 	
 	@Given("User launch the chrome browser")
 	public void User_launch_the_chrome_browser(){
@@ -91,14 +107,14 @@ public void User_enter_the_email_as_and_password_as(String uname, String pws) th
 		logger.info("************Click on login button**********");
 		lp.clickLoginBtn();
 		Thread.sleep(5000);
-	}
 	
-	
+		}
+		
 	@Then("The page title displayed as {string}")
 	public void The_page_title_displayed_as(String title) throws InterruptedException{
 		//Invalid email or password
 		 if(driver.getPageSource().contains("Invalid email or password")){
-			 
+			 System.out.println("The title is: " +driver.getTitle());
 			 driver.close();
 			 logger.info("************Login fail**********");
 			 Assert.assertTrue(false);}
@@ -222,9 +238,24 @@ public void User_enter_the_email_as_and_password_as(String uname, String pws) th
 	}*/
 ////*[@class='ant-dropdown-menu-item ant-dropdown-menu-item-active']/li
 	////div[@class='ant-dropdown antd-pro-components-header-dropdown-index-container ant-dropdown-placement-bottomLeft  ant-dropdown-hidden']/ul/li[1]/span
+	
+	
+	/*@After()
+	public void tearDown(Scenario scenario){
+		scenario.write("Screen captured");
+		if(scenario.isFailed()){
+			
+			final byte[] screenshot =((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+			scenario.embed(screenshot,"image/png");
+		}
+		driver.close();
+	}*/
+	
 	@And ("Then close the browser")
 	public void Then_close_the_browser() throws InterruptedException{
+	
 		logger.info("************Closing Browser**********");
+		
 		Thread.sleep(2000);
 		driver.quit();
 		

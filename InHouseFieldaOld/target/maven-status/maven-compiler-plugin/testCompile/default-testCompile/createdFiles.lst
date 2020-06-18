@@ -1,5 +1,8 @@
-stepDefinations\LoginScreen.class
+stepDefinations\Hook.class
 stepDefinations\BaseClass.class
 pageObjects\LoginPage.class
 testRunner\RunnerTest.class
+stepDefinations\LoginScreen.class
+stepDefinations\ConfigFileReader.class
+utilities\CommonHelper.class
 pageObjects\CreateActivity.class
