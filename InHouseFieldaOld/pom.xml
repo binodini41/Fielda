@@ -45,8 +45,7 @@
       <projectName>Execute Fields InHouse</projectName>
       <outputDirectory>$ {project.build.directory}/cucumber-reports-html</outputDirectory>
       <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-      <checkBuildResult>true</checkBuildResult>
-      </configuration>
+            </configuration>
       </execution>
       </executions>
       

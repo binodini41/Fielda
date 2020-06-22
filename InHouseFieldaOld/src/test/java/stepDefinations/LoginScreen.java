@@ -7,21 +7,15 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.junit.After;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.Augmenter;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 
 import cucumber.api.Scenario;
 import cucumber.api.java.Before;
@@ -30,7 +24,10 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pageObjects.CreateActivity;
+import pageObjects.ForgotpasswordPage;
 import pageObjects.LoginPage;
+import pageObjects.SignupPage;
+
 
 public class LoginScreen extends BaseClass  {
 
@@ -71,7 +68,6 @@ public class LoginScreen extends BaseClass  {
 	
 	
 	
-	
 	@Given("User launch the chrome browser")
 	public void User_launch_the_chrome_browser(){
 		/*logger = Logger.getLogger("InHouseFielda"); 
@@ -82,6 +78,7 @@ public class LoginScreen extends BaseClass  {
 		driver.manage().window().maximize();
 		logger.info("************Launching Browser**********");	*/	
 		lp=new LoginPage(driver);
+	
 	}
 	
 	@When ("User enter the URL {string}")
@@ -119,16 +116,76 @@ public void User_enter_the_email_as_and_password_as(String uname, String pws) th
 			 logger.info("************Login fail**********");
 			 Assert.assertTrue(false);}
 		 else{
-			 logger.info("************Login pass**********");
+			 
 			 System.out.println("The title is: " +driver.getTitle()); 
+			 logger.info("************Login pass**********");
 				 Assert.assertEquals(title, driver.getTitle()); 
 		 }
 		
 		//Assert.assertEquals(title, driver.getTitle());
 		Thread.sleep(2000);
 		}
-	
+	@When("Click on the Sign up here link") 
+	public void Click_on_the_Sign_up_here_link()throws InterruptedException{
+		logger.info("************Click on the signup link**********");
+		sp = new SignupPage(driver);
+		sp.ClkSignup();
+		 
+	}
 
+	@Then("Enter email id as {string} and password as {string} and confirm password as {string} and display name as {string}")
+public void Enter_email_id_as_and_password_as_and_confirm_password_as_and_display_name_as(String uname, String password, String cpassword,String dname) throws InterruptedException {
+		logger.info("***********Validate the signup form**********");
+	sp.setEmail(uname);
+	sp.setPassword(password);
+	sp.ReEnterPassword(cpassword);
+	sp.EnterDisplayname(dname);
+	Thread.sleep(2000);
+	}
+
+	@Then("Click on Create a Account button")
+	public void Click_on_Create_a_Account_button() throws InterruptedException
+	{
+		logger.info("************Click on the Create Account Btn**********");
+		sp.ClkCreateBtn(); 
+		Thread.sleep(2000);
+	}
+
+	@When("Click on the Forgot password link")
+	public void Click_on_the_Forgot_password_link()throws InterruptedException
+	{
+		logger.info("************Click on the Forgot password link**********");
+		fp = new ForgotpasswordPage(driver);
+		fp.ClkPasswordLink();
+		Thread.sleep(2000);
+	}
+
+	@Then("User enter the email as {string}")
+	public void User_enter_the_email_as(String email) {
+	   fp.emailEnter(email);
+	}
+
+	@Then("Clicked on Resend code button")
+	public void Clicked_on_Resend_code_button() throws InterruptedException{
+	    fp.ClickOnSendBtn();
+	    Thread.sleep(3000);
+	}
+
+	@Then("User enter the new password as {string} and confirm new password as {string} and enter code as {string}")
+	public void User_enter_the_new_password_as_and_confirm_new_password_as_and_enter_code_as(String newpassword, String cnewpassword, String entercode){
+	  fp.SetnewPassword(newpassword);
+	  fp.SetconnewPassword(cnewpassword);
+	  fp.SetCode(entercode);
+	}
+
+	@Then("Clicked on change password button")
+	public void Clicked_on_change_password_button()
+	{
+	  fp.ClickonChangePassword();  
+	}
+	
+	
+	
 	
 	@When("user click on the project")
 	public void user_click_on_the_project() throws InterruptedException {
@@ -222,34 +279,20 @@ public void User_enter_the_email_as_and_password_as(String uname, String pws) th
 	   Assert.assertEquals(title, ca.getTitle());
 	}
 	
-/*@When("User clicked on logout")
+@When("User clicked on logout")
 	public void User_clicked_on_logout() throws InterruptedException
 	{
 		Actions actions = new Actions(driver);
-		WebElement target = driver.findElement(By.xpath("//span[@class='antd-pro-components-global-header-index-action antd-pro-components-global-header-index-account ant-dropdown-trigger']/span[2]"));
+	    WebElement target = driver.findElement(By.xpath("//span[@class='antd-pro-components-global-header-index-action antd-pro-components-global-header-index-account ant-dropdown-trigger']/span[2]"));
 		actions.moveToElement(target).perform();
-		WebDriverWait wait = new WebDriverWait(driver, 50);
-		WebElement ClickOnLogout= wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div/ul/li[1]")));
-	    //driver.findElement(By.xpath("//ul[@class='ant-dropdown-menu antd-pro-components-global-header-index-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical']/li[@class='ant-dropdown-menu-item']"));
-		actions.moveToElement(ClickOnLogout).click();
 		Thread.sleep(1000);
-	//lp.ClickOnLogout();
-		logger.info("************User logged out from the application**********");  
-	}*/
-////*[@class='ant-dropdown-menu-item ant-dropdown-menu-item-active']/li
-	////div[@class='ant-dropdown antd-pro-components-header-dropdown-index-container ant-dropdown-placement-bottomLeft  ant-dropdown-hidden']/ul/li[1]/span
+		logger.info("************User logged out from the application**********");
+	    lp.ClickOnLogout();
+		   
+	}
+
 	
 	
-	/*@After()
-	public void tearDown(Scenario scenario){
-		scenario.write("Screen captured");
-		if(scenario.isFailed()){
-			
-			final byte[] screenshot =((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-			scenario.embed(screenshot,"image/png");
-		}
-		driver.close();
-	}*/
 	
 	@And ("Then close the browser")
 	public void Then_close_the_browser() throws InterruptedException{
@@ -258,6 +301,7 @@ public void User_enter_the_email_as_and_password_as(String uname, String pws) th
 		
 		Thread.sleep(2000);
 		driver.quit();
+		
 		
 	}
 }

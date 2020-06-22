@@ -45,9 +45,12 @@ public class LoginPage {
 		
 	}
 	
-/*public void ClickOnLogout(){
-		clickLogout.click();
-	}*/
+
+
+public void ClickOnLogout() {
+	clickLogout.click();
+	
+}
 	
 
 }

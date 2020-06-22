@@ -7,9 +7,9 @@ import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features=".//Features/LoginToFielda.feature",
+@CucumberOptions(features=".//Features",
 glue="stepDefinations",
-tags={"@regression,@sanity"},
+tags={"@sanity,@regression,@Signup"},
 dryRun=false,
 monochrome=true,
 strict=true,

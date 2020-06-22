@@ -78,7 +78,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>Execute Fields InHouse</td>
               <td>1</td>
-            <td>18 Jun 2020, 19:00</td>
+            <td>22 Jun 2020, 16:57</td>
     </tr>
   </tbody>
 </table>
@@ -128,7 +128,7 @@ $(document).ready(function() {
       </div>
 
   
-  <span class="lead-duration duration">25.790</span>
+  <span class="lead-duration duration">27.364</span>
 
 
     <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
@@ -165,7 +165,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
                           <span class="location name">LoginScreen.Setup(Scenario)</span>
                         
-  <span class="lead-duration duration">4.038</span>
+  <span class="lead-duration duration">4.166</span>
 
           </div>
 
@@ -214,7 +214,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">User launch the chrome browser</span>
   
-  <span class="lead-duration duration">0.001</span>
+  <span class="lead-duration duration">0.000</span>
 
   </div>
 
@@ -235,7 +235,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">User enter the URL &quot;https://preview.app2.fielda.com/user/login&quot;</span>
   
-  <span class="lead-duration duration">18.381</span>
+  <span class="lead-duration duration">17.694</span>
 
   </div>
 
@@ -256,7 +256,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">User enter the email as &quot;ivan+fielda-e@fielda.com&quot; and password as &quot;Go demo&quot;</span>
   
-  <span class="lead-duration duration">2.280</span>
+  <span class="lead-duration duration">2.270</span>
 
   </div>
 
@@ -277,7 +277,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">user clicked on the login button</span>
   
-  <span class="lead-duration duration">5.059</span>
+  <span class="lead-duration duration">5.070</span>
 
   </div>
 
@@ -298,7 +298,7 @@ $(document).ready(function() {
   <span class="keyword indention">Then</span>
   <span class="name">The page title displayed as &quot;Home - Fielda&quot;</span>
   
-  <span class="lead-duration duration">0.066</span>
+  <span class="lead-duration duration">2.328</span>
 
   </div>
 
@@ -315,12 +315,54 @@ $(document).ready(function() {
 	at org.testng.Assert.failNotEquals(Assert.java:776)
 	at org.testng.Assert.assertTrue(Assert.java:44)
 	at org.testng.Assert.assertTrue(Assert.java:54)
-	at stepDefinations.LoginScreen.The_page_title_displayed_as(LoginScreen.java:120)
+	at stepDefinations.LoginScreen.The_page_title_displayed_as(LoginScreen.java:117)
 	at &#10045;.The page title displayed as &quot;Home - Fielda&quot;(./Features/LoginToFielda.feature:19)
 </pre>
       </div>
     </div>
   </div>
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">When</span>
+  <span class="name">User clicked on logout</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">The page title displayed as &quot;Login - Fielda&quot;</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
 
 
         
@@ -357,122 +399,6 @@ $(document).ready(function() {
 
 
     
-  <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsable-control" data-target="#after-6">
-      
-<div class="brief failed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-  
-
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
-    </div>
-
-    <div id="after-6" class="inner-level collapse collapsable-details  in ">
-              <div class="hook">
-          <div class="brief failed">
-            <span class="keyword indention">After</span>
-                          <span class="location name">Hook.tearDown(Scenario)</span>
-                        
-  <span class="lead-duration duration">0.000</span>
-
-          </div>
-
-                      
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-7">
-          <a>Error message</a>
-      </div>
-      <div id="msg-7" class="collapse collapsable-details  in ">
-        <pre>java.lang.NullPointerException
-	at stepDefinations.Hook.tearDown(Hook.java:20)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at cucumber.runtime.Utils$1.call(Utils.java:26)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
-	at cucumber.runtime.Utils.invoke(Utils.java:20)
-	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
-	at cucumber.runtime.HookDefinitionMatch.runStep(HookDefinitionMatch.java:14)
-	at cucumber.runner.TestStep.executeStep(TestStep.java:55)
-	at cucumber.runner.TestStep.run(TestStep.java:42)
-	at cucumber.runner.TestCase.run(TestCase.java:53)
-	at cucumber.runner.Runner.runPickle(Runner.java:44)
-	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:98)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:55)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:107)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
-	at org.testng.junit.JUnit4TestRunner.start(JUnit4TestRunner.java:82)
-	at org.testng.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:70)
-	at org.testng.TestRunner$1.run(TestRunner.java:570)
-	at org.testng.TestRunner.runJUnitWorkers(TestRunner.java:717)
-	at org.testng.TestRunner.privateRunJUnit(TestRunner.java:601)
-	at org.testng.TestRunner.run(TestRunner.java:502)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:135)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:112)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:377)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:138)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:465)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:451)
-</pre>
-      </div>
-    </div>
-  </div>
-
-          
-                    
-  <div class="outputs inner-level">
-          <div class="output indention">
-        <div data-toggle="collapse" class=" collapsable-control" data-target="#output-8">
-          Output 1
-          <i class="chevron fa fa-fw"></i>
-        </div>
-        <div id="output-8" class="collapse collapsable-details  in "  aria-expanded="true" >
-          
-          <pre><p>capture screen</p></pre>
-        </div>
-      </div>
-      </div>
-
-          
-  
-        </div>
-          </div>
-  </div>
 
   </div>
 </div>

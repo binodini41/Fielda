@@ -1,2 +1,4 @@
 cd C:\HybridFrameWorkSpace\InHouseFieldaOld
-mvn clean install
+mvn clean
+mvn compile
+mvn verify

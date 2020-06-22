@@ -1,6 +1,7 @@
-stepDefinations\Hook.class
 stepDefinations\BaseClass.class
+pageObjects\ForgotpasswordPage.class
 pageObjects\LoginPage.class
+pageObjects\SignupPage.class
 testRunner\RunnerTest.class
 stepDefinations\LoginScreen.class
 stepDefinations\ConfigFileReader.class
